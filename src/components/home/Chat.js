@@ -11,9 +11,9 @@ export default function Chat(props) {
   const chatMessagesRef = useRef(null);
 
   useEffect(() => {
-    const id = async () => await getUserID();
-    setId(id);
     const getMes = async () => {
+      const id = await getUserID();
+      setId(id);
       let data = await getMessages(props?.chat_id);
       setMessages(data);
     };
@@ -40,6 +40,7 @@ export default function Chat(props) {
     if (chatMessagesRef.current) {
       chatMessagesRef.current.scrollTo(0, chatMessagesRef.current.scrollHeight);
     }
+    console.log(id)
   }, [messages]);
 
   return (
@@ -53,13 +54,13 @@ export default function Chat(props) {
           <Container>
             <Row>
               {messages.map((i) => (
-                i.user_from_id === id ? (
+                i.user_from_id == id ? (
                   <Col lg="12" key={i.id}>
-                    <div className="message-from">{i.message}</div>
+                    <div className="message-to">{i.message}</div>
                   </Col>
                 ) : (
                   <Col lg="12" key={i.id}>
-                    <div className="message-to">{i.message}</div>
+                    <div className="message-from">{i.message}</div>
                   </Col>
                 )
               ))}
