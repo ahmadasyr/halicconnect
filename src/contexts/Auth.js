@@ -30,5 +30,6 @@ export const signup = async (info) => {
 };
 
 export const logout = async () => {
-  const logout = supabase.auth.signOut();
+  const logout = await supabase.auth.signOut();
+  window.location.href = '/';
 };
