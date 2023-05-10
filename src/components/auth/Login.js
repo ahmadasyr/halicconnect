@@ -97,7 +97,7 @@ export default function Login() {
                 >
                   Login
                 </Button>
-                <Link to="/forgot-password">Forgot password?</Link>
+                {/* <Link to="/forgot-password">Forgot password?</Link> */}
                 <hr></hr>
                 <Link style={{ textDecoration: "none" }} to="/signup">
                   <Button
