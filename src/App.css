@@ -1,38 +1,258 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@import "~bootstrap/dist/css/bootstrap.min.css";
+body {
+  background-color: #f6f8fb;
+  font-family: "Roboto", sans-serif;
+  color: black;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.primary {
+  color: #21479e;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.white {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.secondary {
+  color: #158582;
+}
+.secondary-background {
+  background-color: #e5588c;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.light {
+  color: #7bb6b3;
+}
+
+.dark {
+  color: #324b4a;
+}
+
+.purple {
+  color: #9c4aa1;
+}
+
+.pink {
+  color: #e5588c;
+}
+
+.salmon {
+  color: #ff836e;
+}
+
+.orange {
+  color: #ffbc5c;
+}
+
+.yellow {
+  color: #f9f871;
+}
+
+.primary-background {
+  background-color: #21479e;
+}
+
+.auth-card {
+  max-height: max-content;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-top: 10%;
+  border-radius: 1rem;
+  padding: 3rem;
+}
+
+.contain-image {
+  max-width: 70%;
+}
+
+footer {
+  background-color: rgb(245, 245, 245);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.background-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://i0.wp.com/www.akademikportal.com/wp-content/uploads/2022/01/yeni-kampus-1.png");
+  background-size:cover;
+  opacity: 0.1;
+}
+
+.App {
+  text-align: center;
+  background-color: #f8f8f8;
+}
+
+.App-header {
+  padding: 0 2rem;
+  background-color: #21479e;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.App-header img {
+  max-height: 50px;
+}
+
+.content {
+  background-color: #fff;
+  padding: 30px;
+  margin-top: 30px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.posts-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+
+.fader {
+  background: linear-gradient(
+    to right,
+    #9c4aa1,
+    #e5588c,
+    #ff836e,
+    #ffbc5c,
+    #f9f871
+  );
+  background-size: 400% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fade 10s ease infinite;
+}
+
+@keyframes fader {
+  0% {
+    background-position: 0% 50%;
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    background-position: 100% 50%;
   }
+}
+
+
+.user-item{
+  background-color: white;
+  color: #21479e;
+  font-weight: bold;
+  border-radius: 1rem;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+}
+
+
+.chat-popup {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 20rem;
+  height: 400px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ccc;
+  z-index: 999;
+}
+
+.chat-head {
+  background-color: #21479e;
+  color: white;
+  padding: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+
+  align-items: left;
+}
+
+.chat-content {
+  height: 100%;
+  flex-direction: column;
+}
+
+.chat-messages {
+  text-align: left;
+  overflow-y: auto;
+  padding: 10px;
+  flex-grow: 1;
+  height: 18rem;
+}
+
+.message-from {
+  background-color: #f5f5f5;
+  color: #333;
+  padding: 5px 10px;
+  border-radius: 20px;
+  max-width: 70%;
+  margin-bottom: 10px;
+  align-self: flex-start; /* Update */
+  float: left;
+}
+
+.message-to {
+  background-color: #21479e;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  max-width: 70%;
+  margin-bottom: 10px;
+  align-self: flex-start; /* Update */
+  float: right;
+}
+
+
+.message-input {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.message-input input {
+  flex-grow: 1;
+  border-radius: 20px 0 0 20px;
+  border: none;
+  padding: 5px 10px;
+  box-shadow: 0 0 5px #ccc;
+}
+
+.message-input button {
+  background-color: #21479e;
+  color: white;
+  border: none;
+  border-radius: 0 20px 20px 0;
+  padding: 5px 10px;
+  cursor: pointer;
+  box-shadow: 0 0 5px #ccc;
 }
